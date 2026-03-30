@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 1;
+}
+@keyframes middle-to-up {
+
+    0%{
+        transform: translateX(0);
+    }
+    /*50%{*/
+    /*    transform: translateY(10%) scale(2);*/
+    /*}*/
+    100%{
+        transform: translateX(-100%);
+        display: none;
+    }
+}
+@keyframes middle-to-down {
+    0%{
+        transform: translateX(0);
+    }
+    /*50%{*/
+    /*    transform: translateY(-10%) scale(1.2);*/
+    /*}*/
+    100%{
+        transform: translateX(100%) ;
+        display: none;
+    }
+}
+@keyframes button-big {
+    from{
+        pointer-events: none;
+        opacity: 1;
+    }
+    to{
+        transform:  scale(3);
+        pointer-events: none;
+        opacity: 0;
+        display: none;
+    }
+
+}
+.door-up{
+
+    animation: middle-to-up 0.8s forwards;
+}
+.door-down{
+
+    animation: middle-to-down 0.8s forwards;
+}
+.button-big{
+    animation: button-big 0.8s forwards;
+}
