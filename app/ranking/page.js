@@ -73,7 +73,7 @@ export function RankingCard({def = false,record,ranking}) {
         return (
             <div className={'grid grid-cols-[1.5fr_2fr] gap-2 p-4  bg-white rounded-xl '}>
 
-                <p className={'  text-2xl font-bold my-auto  '}><span className={`text-5xl mx-1 ${rankingStyle[ranking]}`}>{ranking}</span>/{score}점</p>
+                <p className={'  text-2xl font-bold my-auto  '}><span className={`text-5xl mx-1 ${rankingStyle[ranking]}`}>#{ranking}</span>/{score}점</p>
                 <div className={'flex flex-col items-end    place-items-end '} >
                     <p className={'text-[15px] font-bold text-gray-600'}>{school}</p>
                     <p className={'text-2xl my-1 font-bold'}>{stu}</p>
@@ -89,11 +89,11 @@ export function RankingCard({def = false,record,ranking}) {
     }
     return (
         <div className={'flex  justify-between  items-baseline p-4  bg-white rounded-xl w-full'}>
-            <p className={'text-xl font-bold my-auto '}><span className={'text-3xl mx-1'}>{ranking}</span>/{score}점</p>
-            <div className={'flex flex-col'}>
+            <p className={'text-xl font-bold my-auto '}><span className={'text-3xl mx-1'}>#{ranking}</span>/{score}점</p>
+            <div className={'flex flex-col text-center'}>
 
             <p className={'text-2xl font-bold'}>{stu}</p>
-            <p className={'text-[15px] font-bold text-gray-600'}>신흥초등학교</p>
+            <p className={'text-[15px] font-bold text-gray-600'}>{school}</p>
 
             </div>
 

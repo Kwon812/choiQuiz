@@ -8,9 +8,13 @@ export async function postQuiz(quiz){
 
     return res.data
 }
-export async function getAllQuiz(){
+export async function getAllQuiz(selected){
 
-    const res=await axios.get('/api/quiz')
+    const res=await axios.get('/api/quiz',{
+        params:{
+            selected
+        }
+    })
 
     return res.data
 }

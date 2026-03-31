@@ -15,10 +15,19 @@ export default function Handler(req,res){
             return res.status(200).send({data})
         },
         GET:async()=>{
-            const { data, error } = await supabase.rpc('get_random_quiz')
+            // console.log(req.query)
+            const selected=req.query?.selected
+            let data,error;
+            if(selected){
+                ({ data, error } = await supabase.rpc('get_random_quiz').eq('type',req.query.selected));
+            }else{
+                ({ data, error } = await supabase.from('quizs').select('*'));
+            }
+
             if(error){
                 return res.status(400).json({error:error})
             }
+            // console.log(data)
             return res.status(200).send(data)
         },
         PUT:async()=>{
